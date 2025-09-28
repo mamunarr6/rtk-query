@@ -1,7 +1,9 @@
+import { Outlet } from "react-router";
+
 function App() {
   return (
     <>
-      <h1 className="bg-green-300">hello</h1>
+      <Outlet></Outlet>
     </>
   );
 }
