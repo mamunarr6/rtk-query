@@ -9,10 +9,17 @@ const baseApi = createApi({
         }),
         getPostsById: build.query({
             query: (id)=> `/posts/${id}`
+        }),
+        setPost: build.mutation({
+            query: (post) => ({
+                url: "/posts",
+                method: "POST",
+                body: post,
+            })
         })
     })
 })
 
-export const {useGetPostsQuery, useGetPostsByIdQuery} = baseApi;
+export const {useGetPostsQuery, useGetPostsByIdQuery, useSetPostMutation} = baseApi;
 
 export default baseApi;
